@@ -5,6 +5,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: string;
+  subPoints: string[]; 
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, subPoints }) => {
@@ -17,9 +18,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, sub
       <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
       <ul>
-        {subPoints.map((point, index) => {
+        {subPoints.map((point, _) => (
           <li className="">{point}</li>
-        })}
+        ))}
       </ul>
     </motion.div>
   );
